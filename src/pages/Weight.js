@@ -8,9 +8,7 @@ function Weight (){
         <React.Fragment>    
         <Navbar />
             <FormWeight />                    
-        </React.Fragment>
-
-    
+        </React.Fragment>    
     );
 }
 
