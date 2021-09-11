@@ -7,9 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 import { Link} from "react-router-dom";
-
 import { Formik } from 'formik';
-
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -29,40 +27,37 @@ const useStyles = makeStyles((theme) => ({
 
 function FormWeight (){
     const classes = useStyles();
-
     return (
-      <Container component="main" maxWidth="xs">
-   
+      <Container component="main" maxWidth="xs">   
+        <Typography component="h1" variant="h5">
+          Busqueda
+        </Typography>          
         <div className={classes.paper}>  
-          <Typography component="h1" variant="h5">
-            Busqueda
-          </Typography>
-          
           <Formik className={classes.form} noValidate>
-              <>
-            <Grid container spacing={3}>              
-                <TextField
-                  autoComplete="fweight"
-                  name="weight"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="weight"
-                  label="Peso"
-                  autoFocus
-                />
-            </Grid>
-            <Link to="/weight">
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Calcular
-            </Button>
-            </Link>
+            <>
+              <Grid container spacing={3}>              
+                  <TextField
+                    autoComplete="fweight"
+                    name="weight"
+                    variant="outlined"
+                    required
+                    fullWidth
+                    id="weight"
+                    label="Peso"
+                    autoFocus
+                  />
+              </Grid>
+              <Link to="/weight">
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+              >
+                Calcular
+              </Button>
+              </Link>
             </>
           </Formik>
         </div>

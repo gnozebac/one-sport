@@ -12,7 +12,7 @@ function App() {
       <Switch>
         <Route exact path="/splash" component={Splash} />        
         <Route exact path="/search" component={Search} />        
-        <Route exact path="/weight" component={Weight} />        
+        <Route exact path="/weight/:current" component={Weight} />        
         <Route exact path="/results" component={Results} />        
       </Switch>
     </BrowserRouter>

@@ -7,7 +7,7 @@ import Container from '@material-ui/core/Container';
 function Navbar (){
     return (
         <Container component="main" maxWidth="xs">
-            <a href="/">
+            <a href="/splash">
                 <div  className="Navbar">
                     <img src={logo} alt= "logo"/>
                 <span>OneSport</span>
