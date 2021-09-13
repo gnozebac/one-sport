@@ -26,9 +26,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function FormWeight({ codeCustomer }) {
-
   const [customer, setCustomer] = useState('')
-
   const formik = useFormik({
     initialValues: {
       weight: ""
@@ -54,24 +52,19 @@ function FormWeight({ codeCustomer }) {
       <Typography component="h1" variant="h5">
           Peso actual
         </Typography>
-            <Grid container spacing={3}>
-   
-            <h3> Cedula: ****** {customer.firstname}</h3>
-              
+            <Grid container spacing={3}>   
+            <h3> Cedula: ****** {customer.firstname}</h3>              
                  <TextField
-                 autoComplete="fweight"
-            
-                 variant="outlined"
-                 required
-                 fullWidth
-                name="weight"
-
-                
-                id="weight"
-                label="Peso"
-                autoFocus
-                onChange ={formik.handleChange('weight')}
-                value={formik.values.weight}
+                  autoComplete="fweight"            
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="weight"                
+                  id="weight"
+                  label="Peso"
+                  autoFocus
+                  onChange ={formik.handleChange('weight')}
+                  value={formik.values.weight}
               />
             </Grid>
             <Link to={{
@@ -91,8 +84,7 @@ function FormWeight({ codeCustomer }) {
               >
                 Calcular
               </Button>
-            </Link>
-          
+            </Link>          
         </form>
       </div>
 
