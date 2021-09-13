@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { useFormik} from 'formik';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -27,15 +28,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function CodeInput() {
+  const formik = useFormik({
+    initialValues: {
+      code: ""
+    },
+    onSubmit: x => console.log(x)
+  });
+
   const classes = useStyles();  
   const wrapper = {
     textDecoration: 'none'
   };
+
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>        
+   
         <form className={classes.form} >
         <Typography component="h1" variant="h5">
           Ingresar código
@@ -50,15 +61,18 @@ export default function SignIn() {
             name="code"
             autoComplete="code"
             autoFocus
+            onChange ={formik.handleChange('code')}
+            value={formik.values.code}
           />
           <Link to={{
             pathname: '/weight/current',
             state: {
-              code: 45
+              code: formik.values.code
             }
             }} style={wrapper} 
           >
           <Button
+            
             type="submit"
             fullWidth
             variant="contained"
@@ -69,6 +83,7 @@ export default function SignIn() {
           </Button>
           </Link>
         </form>
+
       </div>
       
     </Container>

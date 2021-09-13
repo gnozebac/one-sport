@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
@@ -6,13 +6,13 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-import { Link} from "react-router-dom";
-import { Formik } from 'formik';
+import { Link } from "react-router-dom";
+import { useFormik} from 'formik';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
-    display: 'flex',    
+    display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   },
@@ -25,29 +25,63 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function FormWeight (){
-    const classes = useStyles();
-    return (
-      <Container component="main" maxWidth="xs">   
-        <Typography component="h1" variant="h5">
-          Busqueda
-        </Typography>          
-        <div className={classes.paper}>  
-          <Formik className={classes.form} noValidate>
-            <>
-              <Grid container spacing={3}>              
-                  <TextField
-                    autoComplete="fweight"
-                    name="weight"
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="weight"
-                    label="Peso"
-                    autoFocus
-                  />
-              </Grid>
-              <Link to="/weight">
+function FormWeight({ codeCustomer }) {
+
+  const [customer, setCustomer] = useState('')
+
+  const formik = useFormik({
+    initialValues: {
+      weight: ""
+    },
+    onSubmit: x => console.log(x)
+  });
+  
+  useEffect(()=>{
+    fetch(`https://besport.herokuapp.com/customers/${codeCustomer}`)
+    .then(response => response.json())
+    .then(data => setCustomer(data))
+  },[codeCustomer])
+  
+    const wrapper = {
+      textDecoration: 'none'
+    };
+  const classes = useStyles();
+  return (
+    <Container component="main" maxWidth="xs">
+     
+      <div className={classes.paper}>
+      <form className={classes.form} >
+      <Typography component="h1" variant="h5">
+          Peso actual
+        </Typography>
+            <Grid container spacing={3}>
+   
+            <h3> Cedula: ****** {customer.firstname}</h3>
+              
+                 <TextField
+                 autoComplete="fweight"
+            
+                 variant="outlined"
+                 required
+                 fullWidth
+                name="weight"
+
+                
+                id="weight"
+                label="Peso"
+                autoFocus
+                onChange ={formik.handleChange('weight')}
+                value={formik.values.weight}
+              />
+            </Grid>
+            <Link to={{
+            pathname: '/results/current',
+            state: {
+              code: customer.id,
+              weight: formik.values.weight
+            }
+            }} style={wrapper} 
+          >
               <Button
                 type="submit"
                 fullWidth
@@ -57,13 +91,13 @@ function FormWeight (){
               >
                 Calcular
               </Button>
-              </Link>
-            </>
-          </Formik>
-        </div>
+            </Link>
+          
+        </form>
+      </div>
 
-      </Container>
-    );
+    </Container>
+  );
 }
 
 export default FormWeight;

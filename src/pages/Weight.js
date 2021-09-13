@@ -13,7 +13,7 @@ function Weight (){
     return(        
         <React.Fragment>    
         <Navbar />
-            <FormWeight />                    
+            <FormWeight codeCustomer={code}/>                    
         </React.Fragment>    
     );
 }
