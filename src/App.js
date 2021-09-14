@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/splash" component={Splash} />        
+        <Route path="/" component={Splash} />        
         <Route exact path="/search" component={Search} />        
         <Route exact path="/weight/:current" component={Weight} />        
         <Route exact path="/results/:current" component={Results} />        
