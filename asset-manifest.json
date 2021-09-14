@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/onesport/static/css/main.02e85570.chunk.css",
+    "main.js": "/onesport/static/js/main.c6a8b24e.chunk.js",
+    "main.js.map": "/onesport/static/js/main.c6a8b24e.chunk.js.map",
+    "runtime-main.js": "/onesport/static/js/runtime-main.919cc951.js",
+    "runtime-main.js.map": "/onesport/static/js/runtime-main.919cc951.js.map",
+    "static/js/2.2bc78823.chunk.js": "/onesport/static/js/2.2bc78823.chunk.js",
+    "static/js/2.2bc78823.chunk.js.map": "/onesport/static/js/2.2bc78823.chunk.js.map",
+    "static/js/3.565fe0fe.chunk.js": "/onesport/static/js/3.565fe0fe.chunk.js",
+    "static/js/3.565fe0fe.chunk.js.map": "/onesport/static/js/3.565fe0fe.chunk.js.map",
+    "index.html": "/onesport/index.html",
+    "static/css/main.02e85570.chunk.css.map": "/onesport/static/css/main.02e85570.chunk.css.map",
+    "static/js/2.2bc78823.chunk.js.LICENSE.txt": "/onesport/static/js/2.2bc78823.chunk.js.LICENSE.txt",
+    "static/media/diet1.bb905bb5.jpeg": "/onesport/static/media/diet1.bb905bb5.jpeg",
+    "static/media/diet10.5b45b8c1.jpeg": "/onesport/static/media/diet10.5b45b8c1.jpeg",
+    "static/media/diet2.96fa54c3.jpeg": "/onesport/static/media/diet2.96fa54c3.jpeg",
+    "static/media/diet3.c8c98883.jpeg": "/onesport/static/media/diet3.c8c98883.jpeg",
+    "static/media/diet4.3e4c90b9.jpeg": "/onesport/static/media/diet4.3e4c90b9.jpeg",
+    "static/media/diet5.dff2194d.jpeg": "/onesport/static/media/diet5.dff2194d.jpeg",
+    "static/media/diet6.b2a78b79.jpeg": "/onesport/static/media/diet6.b2a78b79.jpeg",
+    "static/media/diet7.e111b499.jpeg": "/onesport/static/media/diet7.e111b499.jpeg",
+    "static/media/diet8.81123815.jpeg": "/onesport/static/media/diet8.81123815.jpeg",
+    "static/media/diet9.aad1d851.jpeg": "/onesport/static/media/diet9.aad1d851.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.919cc951.js",
+    "static/js/2.2bc78823.chunk.js",
+    "static/css/main.02e85570.chunk.css",
+    "static/js/main.c6a8b24e.chunk.js"
+  ]
+}
